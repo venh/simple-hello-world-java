@@ -55,6 +55,7 @@ pipeline{
 	  //sendEmail('$DEFAULT_RECIPIENTS', null, "[${env.BLD_STATUS}] - ${env.PRJ_NAME} - Build # ${BUILD_NUMBER} ($BUILD_ID)", '''${SCRIPT, template="custom-html.template"}''') 
 	  //printMsg("$JOB_BASE_NAME")
         echo "Always executes..."
+	  emailext body: '${SCRIPT, template="custom-html.template"}', subject: 'Build Completed', to: 'venkatesh.subramanian@xoriant.com'
       }
     } // end of post
 }//end of Pipeline
