@@ -48,7 +48,11 @@ pipeline{
  post{
       success {
          script {
+	    try {	 
 	    sh "java HelloWorld"
+	    } catch(Exception e){
+		    echo 'Exception occurred: ' + e.toString()
+	    }
 	 }
       }
       always{		
