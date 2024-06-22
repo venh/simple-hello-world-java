@@ -53,6 +53,8 @@ pipeline{
 	       throw new Exception("Something went wrong!")
 	    } catch(Exception e){
 		    echo 'Exception occurred: ' + e.toString()
+		    continuePipeline = false
+                    currentBuild.result = 'FAILURE'
 	    }
 	 }
       }
