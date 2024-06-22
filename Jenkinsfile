@@ -49,7 +49,8 @@ pipeline{
       success {
          script {
 	    try {	 
-	    sh "java HelloWorld"
+	       sh "java HelloWorld"
+	       throw new Exception("Something went wrong!")
 	    } catch(Exception e){
 		    echo 'Exception occurred: ' + e.toString()
 	    }
