@@ -7,6 +7,9 @@ pipeline{
 	   BLD_STATUS = '$BUILD_STATUS'
 	   PRJ_NAME = '$PROJECT_NAME'
  }// end of environment
+ triggers {
+    pollSCM '*/5 * * * *'
+  }
  stages{
 	  stage('CleanWorkspace') {
             steps {
@@ -21,6 +24,7 @@ pipeline{
                     scm: [
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
+			poll: true,
                         doGenerateSubmoduleConfigurations: false,
                         extensions: [
                             [$class: 'RelativeTargetDirectory', relativeTargetDir: '.']
