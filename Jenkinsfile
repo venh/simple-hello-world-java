@@ -1,4 +1,7 @@
 pipeline{
+ triggers {
+    pollSCM('')
+  }
  agent	 any
    options {
 	  skipDefaultCheckout()
@@ -7,9 +10,7 @@ pipeline{
 	   BLD_STATUS = '$BUILD_STATUS'
 	   PRJ_NAME = '$PROJECT_NAME'
  }// end of environment
- //triggers {
-    //pollSCM ''
-  //}
+ 
  stages{
 	  stage('CleanWorkspace') {
             steps {
