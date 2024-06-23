@@ -1,11 +1,5 @@
 pipeline{
- //triggers {
-    //pollSCM('')
-    //githubPush()
-  //}
- agent {
-	any
- }
+ agent any
    options {
 	  skipDefaultCheckout()
 	}
