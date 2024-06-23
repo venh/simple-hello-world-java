@@ -8,7 +8,7 @@ pipeline{
 	   PRJ_NAME = '$PROJECT_NAME'
  }// end of environment
  triggers {
-    pollSCM '*/5 * * * *'
+    pollSCM ''
   }
  stages{
 	  stage('CleanWorkspace') {
