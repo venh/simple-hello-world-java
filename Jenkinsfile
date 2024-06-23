@@ -24,7 +24,6 @@ pipeline{
                     scm: [
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
-			poll: true,
                         doGenerateSubmoduleConfigurations: false,
                         extensions: [
                             [$class: 'RelativeTargetDirectory', relativeTargetDir: '.']
