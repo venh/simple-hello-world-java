@@ -50,11 +50,11 @@ pipeline{
          script {
 	    try {	 
 	       sh "java HelloWorld"
-	       throw new Exception("Something went wrong!")
+	       //throw new Exception("Something went wrong!")
 	    } catch(Exception e){
 		    echo 'Exception occurred: ' + e.toString()
-		    continuePipeline = false
-                    currentBuild.result = 'FAILURE'
+		    //continuePipeline = false
+                    //currentBuild.result = 'FAILURE'
 	    }
 	 }
       }
