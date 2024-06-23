@@ -24,7 +24,7 @@ pipeline{
      steps{
 	    checkout(
                     changelog: false,
-                    poll: true,
+                    poll: false,
                     scm: [
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
