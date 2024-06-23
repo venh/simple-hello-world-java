@@ -2,8 +2,9 @@ pipeline{
  triggers {
     pollSCM('')
   }
- agent	
+ agent {
 	any
+ }
    options {
 	  skipDefaultCheckout()
 	}
@@ -22,7 +23,7 @@ pipeline{
      steps{
 	    checkout(
                     changelog: false,
-                    poll: false,
+                    poll: true,
                     scm: [
                         $class: 'GitSCM',
                         branches: [[name: '*/main']],
