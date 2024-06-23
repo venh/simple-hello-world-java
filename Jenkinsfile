@@ -2,7 +2,8 @@ pipeline{
  triggers {
     pollSCM('')
   }
- agent	 any
+ agent	
+	any
    options {
 	  skipDefaultCheckout()
 	}
