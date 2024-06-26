@@ -39,7 +39,7 @@ pipeline{
    }//end of stage 
    stage("Compile"){
      steps{
-		 echo "Compilation..."
+	   echo "Compilation..."
 	    script{
 			sh "javac HelloWorld.java"
 		}//end of script
@@ -51,11 +51,10 @@ pipeline{
          script {
 	    try {	 
 	       sh "java HelloWorld"
-	       //throw new Exception("Something went wrong!")
+	       throw new Exception("Something went wrong!")
 	    } catch(Exception e){
 		    echo 'Exception occurred: ' + e.toString()
-		    //continuePipeline = false
-                    //currentBuild.result = 'FAILURE'
+                    currentBuild.result = 'FAILURE'
 	    }
 	 }
       }
